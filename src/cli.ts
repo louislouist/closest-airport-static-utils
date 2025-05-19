@@ -1,5 +1,6 @@
 import { loadAirports } from './airportLoader';
 import { findClosestAirports } from './findClosestAirports';
+import { Frequency } from './haversineDistance';
 import { searchAirportByCode } from './searchAirportByCode';
 import { searchAirportsByQuery } from './searchAirportsByQuery';
 
@@ -56,7 +57,7 @@ function printAirport(airport: any) {
 	console.log(`🌍 Region: ${airport.regionName}`);
 	if (airport.frequencies?.length) {
 		console.log(`📡 Frequencies:`);
-		airport.frequencies.forEach(f =>
+		airport.frequencies.forEach((f: Frequency) =>
 			console.log(`  - ${f.type} (${f.description}): ${f.mhz} MHz`)
 		);
 	}

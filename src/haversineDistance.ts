@@ -8,6 +8,7 @@ export interface Airport {
 	lat: number;
 	lon: number;
 	type: string;
+	distance?: number;
 	wikipedia?: string;
 	regionCode?: string;
 	regionName?: string;
