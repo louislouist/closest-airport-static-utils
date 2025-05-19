@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "csv-parse": "^5.6.0"
+  },
+  "bin": {
+    "airport-utils": "./dist/cli.js"
   }
 }

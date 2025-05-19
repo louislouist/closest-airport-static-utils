@@ -18,4 +18,19 @@ function main() {
 	console.log('Search for LAX:', lax);
 }
 
+function example() {
+	const closest = findClosestAirports(36.12, -115.17, loadAirports(), 3);
+
+	closest.forEach(airport => {
+		console.log(`${airport.name} (${airport.iata || airport.icao})`);
+		console.log(`Region: ${airport.regionName}`);
+		console.log(`Frequencies:`);
+		airport.frequencies?.forEach(f => {
+			console.log(`  ${f.type} (${f.description}): ${f.mhz} MHz`);
+		});
+	});
+}
+
 main();
+
+example();
