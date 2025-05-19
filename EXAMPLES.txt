@@ -1,0 +1,14 @@
+# Find closest airports to a lat/lon
+node cli.js --lat 34.05 --lon -118.25
+
+# Look up airport by code (IATA or ICAO)
+node cli.js --code LAX
+
+# Fuzzy search for airport by name
+node cli.js --search "los angeles"
+
+# Get results in JSON format
+node cli.js --search "new york" --json
+
+# Prefer ICAO codes in output
+node cli.js --code JFK --icao
