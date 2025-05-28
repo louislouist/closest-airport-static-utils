@@ -11,7 +11,7 @@ A TypeScript library for finding the closest airports to a given location using 
 npm install git+https://github.com/louislouist/closest-airport-static-utils.git
 cd node_modules/closest-airport-static-utils
 npm run build
-npm fetch-data
+npm run fetch-data
 npm run test
 ```
 Check to insure fetch-data is successful for all files. 
