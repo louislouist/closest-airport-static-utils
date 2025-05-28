@@ -6,19 +6,30 @@ A TypeScript library for finding the closest airports to a given location using 
 
 ### From GitHub (Recommended for development)
 
+#### Install directly from GitHub
 ```bash
-# Install directly from GitHub
 npm install git+https://github.com/louislouist/closest-airport-static-utils.git
+cd node_modules/closest-airport-static-utils
+npm run build
+npm fetch-data
+npm run test
+```
+Check to insure fetch-data is successful for all files. 
+If any of the tests fail, you may want to re-evaluate if something went wrong with fetch-data.
 
-# Or with a specific branch/tag
+#### Or with a specific branch/tag
+```bash
 npm install git+https://github.com/louislouist/closest-airport-static-utils.git#main
+```
 
-# Or clone and link for development
+#### Or clone and link for development (untested)
+```bash
 git clone https://github.com/louislouist/closest-airport-static-utils.git
 cd closest-airport-static-utils
 npm install
 npm run build
 npm link
+```
 
 # Then in your project
 npm link closest-airport-static-utils
@@ -33,8 +44,10 @@ import {
   loadAirports, 
   searchAirportByCode,
   haversineDistance,
+  liveATCExistsByICAO,
   type Airport 
 } from 'closest-airport-static-utils';
+
 
 async function example() {
   // Load airport data (you'll need to provide your own CSV file)
@@ -59,6 +72,16 @@ async function example() {
   // Calculate distance between two points
   const distance = haversineDistance(40.7128, -74.0060, 34.0522, -118.2437);
   console.log('Distance NYC to LA:', distance, 'km');
+
+  // Check if airport has a LiveATC feed.
+	const jfk = "KJFK";
+	const lower = "kjfk";
+	const rand = "JSJD";
+
+	console.log(`Does ICAO "${jfk}" exist?`, liveATCExistsByICAO(jfk));
+	console.log(`Does ICAO "${lower}" exist?`, liveATCExistsByICAO(lower));
+	console.log(`Does ICAO "${rand}" exist?`, liveATCExistsByICAO(rand));}
+
 }
 
 example();
