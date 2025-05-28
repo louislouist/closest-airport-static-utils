@@ -5,11 +5,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "node dist/testSearch.js"
+    "test": "node dist/testSearch.js",
+    "fetch-data": "node --use-system-ca dist/fetchAllData.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/airport-utils.git"
+    "url": "https://github.com/louislouist/closest-airport-static-utils"
   },
   "keywords": [
     "airports",
@@ -24,6 +25,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "csv-parse": "^5.6.0"
   },
   "bin": {

@@ -2,6 +2,7 @@
 
 import { loadAirports } from "./airportLoader";
 import { findClosestAirports } from "./findClosestAirports";
+import { liveATCExistsByICAO } from "./liveATCLocation";
 import { searchAirportByCode } from "./searchAirportByCode";
 
 
@@ -24,6 +25,8 @@ function example() {
 	closest.forEach(airport => {
 		console.log(`${airport.name} (${airport.iata || airport.icao})`);
 		console.log(`Region: ${airport.regionName}`);
+		console.log(`Country: ${airport.country}`);
+		console.log(`Wikipedia: ${airport.wikipedia}`);
 		console.log(`Frequencies:`);
 		airport.frequencies?.forEach(f => {
 			console.log(`  ${f.type} (${f.description}): ${f.mhz} MHz`);
@@ -31,6 +34,21 @@ function example() {
 	});
 }
 
+function inLiveAtc() {
+	const jfk = "KJFK";
+	const lower = "kjfk";
+	const rand = "JSJD";
+
+	console.log(`Does ICAO "${jfk}" exist?`, liveATCExistsByICAO(jfk));
+	console.log(`Does ICAO "${lower}" exist?`, liveATCExistsByICAO(lower));
+	console.log(`Does ICAO "${rand}" exist?`, liveATCExistsByICAO(rand));
+}
+
+
+
 main();
 
 example();
+
+inLiveAtc();
+
