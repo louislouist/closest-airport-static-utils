@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "node dist/testSearch.js",
-    "fetch-data": "node --use-system-ca dist/fetchAllData.js"
+    "fetch-data": "node dist/fetchAllData.js"
   },
   "repository": {
     "type": "git",
