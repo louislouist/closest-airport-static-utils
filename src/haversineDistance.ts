@@ -10,6 +10,7 @@ export interface Airport {
 	type: string;
 	distance?: number;
 	wikipedia?: string;
+	home_link?: string;
 	regionCode?: string;
 	regionName?: string;
 	frequencies?: Frequency[];
