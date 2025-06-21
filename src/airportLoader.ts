@@ -29,6 +29,7 @@ export function loadAirports(): Airport[] {
 				lat: parseFloat(row.latitude_deg),
 				lon: parseFloat(row.longitude_deg),
 				type: row.type,
+				home_link: row.home_link,
 				wikipedia: row.wikipedia_link,
 				regionCode,
 				regionName: regionMap[regionCode],
