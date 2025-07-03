@@ -17,5 +17,7 @@ export function findClosestAirports(
 		.slice(0, count);
 }
 
+
 // NOTE: Current Airport Types
 // ['balloonport', 'closed', 'heliport', 'large_airport', 'medium_airport', 'seaplane_base', 'small_airport']
+

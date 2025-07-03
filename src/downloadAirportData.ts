@@ -39,6 +39,9 @@ export async function downloadAirportData() {
 	}
 
 	console.log('📥 Downloading data from OurAirports.com...');
+
+	const errors: string[] = [];
+
 	for (const file of files) {
 		const outputPath = path.join(DATA_DIR, file.name);
 		try {
@@ -46,8 +49,17 @@ export async function downloadAirportData() {
 			console.log(`✅ ${file.name} downloaded.`);
 		} catch (err) {
 			const message = err instanceof Error ? err.message : String(err);
-			console.error(`❌ ${file.name}: Failed to download ${file.url}: ${message}`);
+			const errorMsg = (`❌ ${file.name}: Failed to download ${file.url}: ${message}`);
+			console.error(errorMsg);
+			errors.push(errorMsg);
+
 		}
+
+		if (errors.length > 0) {
+			throw new Error(`ERROR: Unable to contine!!! One or more downloads failed:\n${errors.join('\n')}\nCurrent airport database may be be empty.`);
+		}
+
 	}
+
 	console.log('All ourairports.com files downloaded.');
 }

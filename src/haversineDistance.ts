@@ -13,6 +13,7 @@ export interface Airport {
 	home_link?: string;
 	regionCode?: string;
 	regionName?: string;
+	regionInfo?: Region;
 	frequencies?: Frequency[];
 }
 
@@ -20,6 +21,17 @@ export interface Frequency {
 	type: string;
 	description: string;
 	mhz: number;
+}
+
+export interface Region {
+	id: number;
+	code: string;
+	local_code: string;
+	name: string;
+	continent: string;
+	iso_country: string;
+	wikipedia_link?: string;
+	keywords?: string;
 }
 
 export function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {

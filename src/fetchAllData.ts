@@ -1,3 +1,4 @@
+import { runImportCsvToDb } from "./db/importCsvToDb";
 import { downloadAirportData } from "./downloadAirportData";
 import { fetchAndSaveATCMarkers } from "./fetchAndSaveLiveATCMarkers";
 
@@ -7,7 +8,7 @@ import { fetchAndSaveATCMarkers } from "./fetchAndSaveLiveATCMarkers";
 async function main() {
 	await downloadAirportData();
 	await fetchAndSaveATCMarkers();
-
+	await runImportCsvToDb();
 }
 
 main().catch(err => console.error(err));

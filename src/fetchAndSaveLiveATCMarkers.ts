@@ -13,7 +13,7 @@ export async function fetchAndSaveATCMarkers(): Promise<void> {
 		}
 
 		const jsText = await response.text();
-		console.log('✅ Fetched JS text:', jsText.slice(0, 300));
+		console.log('✅ Fetched JS text:');
 
 		const sandbox: any = {};
 		vm.createContext(sandbox);

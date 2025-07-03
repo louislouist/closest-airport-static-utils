@@ -4,7 +4,9 @@ import { loadAirports } from "./airportLoader";
 import { findClosestAirports } from "./findClosestAirports";
 import { liveATCExistsByICAO } from "./liveATCLocation";
 import { searchAirportByCode } from "./searchAirportByCode";
-
+import { findClosestAirportsFromDb } from "./findClosestDb";
+import { searchAirportByCodeDb } from "./searchAirportByCodeDb";
+import { searchAirportsByQueryDb } from "./searchAirportsByQuery";
 
 function main() {
 	const airports = loadAirports();
@@ -45,6 +47,50 @@ function inLiveAtc() {
 }
 
 
+function dbSearch() {
+	const closest = findClosestAirportsFromDb(36.12, -115.17, 3);
+
+	console.log("dbSearch()");
+	console.log(`Found ${closest.length} airports`)
+
+
+	closest.forEach(airport => {
+		console.log(`${airport.name} (${airport.iata || airport.icao})`);
+		console.log(`Region: ${airport.regionName}`);
+		console.log(`Country: ${airport.country}`);
+		console.log(`Wikipedia: ${airport.wikipedia}`);
+		console.log(`Frequencies:`);
+		console.table(airport.frequencies);
+		if (airport.regionInfo) {
+			console.table(airport.regionInfo);
+		}
+		console.log('\n')
+	});
+
+	const ap = searchAirportByCodeDb('LAX');
+	if (ap) {
+		console.log(ap);
+	}
+
+
+}
+
+function queryFromDb() {
+	const airports = searchAirportsByQueryDb("Las Vegas", 5);
+
+	console.log("queryFromDb()")
+
+	airports.forEach(a => {
+		console.log(`${a.name} (${a.iata || a.icao})`);
+		console.log(`  ${a.regionInfo?.name}, ${a.country}`);
+		console.table(a.regionInfo);
+		console.log(`  Frequencies:`);
+		a.frequencies?.forEach(f => {
+			console.log(`    ${f.type}: ${f.mhz} MHz (${f.description})`);
+		});
+	});
+}
+
 
 main();
 
@@ -52,3 +98,6 @@ example();
 
 inLiveAtc();
 
+dbSearch();
+
+queryFromDb();

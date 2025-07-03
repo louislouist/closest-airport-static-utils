@@ -1,39 +1,19 @@
 import { Airport, Frequency, Region } from "./haversineDistance";
 import { getDb } from "./db/db";
 
-export function searchAirportsByQuery(
-	query: string,
-	airports: Airport[],
-	count = 5
-): Airport[] {
-	const q = query.toLowerCase();
 
-	const matches = airports.filter(a => {
-		return (
-			a.name?.toLowerCase().includes(q) ||
-			a.city?.toLowerCase().includes(q) ||
-			a.iata?.toLowerCase() === q ||
-			a.icao?.toLowerCase() === q
-		);
-	});
-
-	return matches.slice(0, count);
-}
-
-
-
-export function searchAirportsByQueryDb(
-	query: string,
-	count = 5,
-	allowedTypes: string[] = ['large_airport', 'medium_airport', 'small_airport']
+export function findClosestAirportsFromDb(
+	lat: number,
+	lon: number,
+	count: number,
+	allowedTypes: string[] = ['large_airport', 'medium_airport']
 ): Airport[] {
 	const db = getDb();
-	const q = `%${query.toLowerCase()}%`;
 
 	const placeholders = allowedTypes.map(() => '?').join(',');
 
-	// Step 1: Airport + region data
-	const airportRows = db.prepare(`
+	// Step 1: Closest airports with regionCode
+	const airportQuery = `
 		SELECT
 			a.id,
 			a.name,
@@ -46,30 +26,28 @@ export function searchAirportsByQueryDb(
 			a.type,
 			a.wikipedia_link AS wikipedia,
 			a.home_link,
-			a.iso_region AS regionCode
+			a.iso_region AS regionCode,
+			haversine(a.latitude_deg, a.longitude_deg, ?, ?) AS distance
 		FROM airports a
 		WHERE a.type IN (${placeholders})
-			AND (
-				LOWER(a.name) LIKE ?
-				OR LOWER(a.municipality) LIKE ?
-				OR LOWER(a.iata_code) = ?
-				OR LOWER(a.icao_code) = ?
-			)
+		ORDER BY distance ASC
 		LIMIT ?
-	`).all(...allowedTypes, q, q, query.toLowerCase(), query.toLowerCase(), count) as AirportRow[];
+	`;
 
-	if (airportRows.length === 0) return [];
+	const airportRows = db.prepare(airportQuery).all(lat, lon, ...allowedTypes, count) as AirportRow[];
 
-	// Step 2: Frequencies
+	// Step 2: Get ICAOs for frequencies
 	const icaos = airportRows.map(a => a.icao).filter((v): v is string => !!v);
-	const freqMap = new Map<string, Frequency[]>();
+	const regionCodes = airportRows.map(a => a.regionCode).filter((v): v is string => !!v);
 
+	let freqMap = new Map<string, Frequency[]>();
 	if (icaos.length > 0) {
-		const freqRows = db.prepare(`
+		const freqQuery = `
 			SELECT airport_ident, type, description, frequency_mhz AS mhz
 			FROM airport_frequencies
 			WHERE airport_ident IN (${icaos.map(() => '?').join(',')})
-		`).all(...icaos) as FrequencyRow[];
+		`;
+		const freqRows = db.prepare(freqQuery).all(...icaos) as FrequencyRow[];
 
 		for (const f of freqRows) {
 			if (!freqMap.has(f.airport_ident)) freqMap.set(f.airport_ident, []);
@@ -81,19 +59,18 @@ export function searchAirportsByQueryDb(
 		}
 	}
 
-	// Step 3: Region Info
-	const regionCodes = airportRows.map(r => r.regionCode).filter((v): v is string => !!v);
-	const regionMap = new Map<string, Region>();
-
+	// Step 3: Get Region Info
+	let regionMap = new Map<string, Region>();
 	if (regionCodes.length > 0) {
-		const regionRows = db.prepare(`
+		const regionQuery = `
 			SELECT *
 			FROM regions
 			WHERE code IN (${regionCodes.map(() => '?').join(',')})
-		`).all(...regionCodes) as Region[];
+		`;
+		const regionRows = db.prepare(regionQuery).all(...regionCodes) as Region[];
 
-		for (const r of regionRows) {
-			regionMap.set(r.code, r);
+		for (const region of regionRows) {
+			regionMap.set(region.code, region);
 		}
 	}
 
@@ -108,16 +85,19 @@ export function searchAirportsByQueryDb(
 		lat: row.lat,
 		lon: row.lon,
 		type: row.type,
+		distance: row.distance,
 		wikipedia: row.wikipedia,
 		home_link: row.home_link,
 		regionCode: row.regionCode,
-		regionName: regionMap.get(row.regionCode ?? '')?.name ?? undefined,
+		regionName: regionMap.get(row.regionCode ?? '')?.name,
 		regionInfo: regionMap.get(row.regionCode ?? '') ?? undefined,
 		frequencies: freqMap.get(row.icao ?? '') ?? [],
 	}));
 }
 
-// Internal types
+// NOTE: Current Airport Types
+// ['balloonport', 'closed', 'heliport', 'large_airport', 'medium_airport', 'seaplane_base', 'small_airport']
+
 interface AirportRow {
 	id: number;
 	name: string;
@@ -131,7 +111,13 @@ interface AirportRow {
 	wikipedia?: string;
 	home_link?: string;
 	regionCode?: string;
+	regionName?: string;
+	distance: number;
+	freq_type?: string;
+	freq_description?: string;
+	freq_mhz?: number;
 }
+
 
 interface FrequencyRow {
 	airport_ident: string;
@@ -139,4 +125,3 @@ interface FrequencyRow {
 	description: string;
 	mhz: number;
 }
-
