@@ -1,4 +1,4 @@
-import { runImportCsvToDb } from "./db/importCsvToDb";
+import { runImportCsvToDb } from "../db/importCsvToDb";
 import { downloadAirportData } from "./downloadAirportData";
 import { fetchAndSaveATCMarkers } from "./fetchAndSaveLiveATCMarkers";
 

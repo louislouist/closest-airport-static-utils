@@ -1,3 +1,0 @@
-migrate functions from db() and old functions to csv().
-update README.txt for new functions.
-CLI migragtion.

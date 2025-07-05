@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
-import { Frequency } from './haversineDistance';
+import { Frequency } from './types/airport';
 
 export function loadFrequencies(csvPath: string = path.join(__dirname, '..', 'data', 'airport-frequencies.csv')): Record<string, Frequency[]> {
 	const fileContent = fs.readFileSync(csvPath, 'utf-8');

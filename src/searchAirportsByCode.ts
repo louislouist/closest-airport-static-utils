@@ -1,5 +1,5 @@
+import { Airport, Frequency } from "./types/airport";
 import { getDb } from "./db/db";
-import { Airport, Frequency } from "./haversineDistance";
 
 interface AirportRow {
 	id: number;
@@ -26,7 +26,7 @@ interface AirportRow {
 	region_keywords?: string;
 }
 
-export function searchAirportByCodeDb(
+export function searchAirportByCode(
 	code: string,
 	options: { preferIcao?: boolean } = {}
 ): Airport | null {

@@ -3,7 +3,7 @@ import path from 'path';
 import vm from 'vm';
 
 const MARKERS_URL = 'https://www.liveatc.net/map/markers.js';
-const OUTPUT_FILE = path.join(__dirname, 'data', 'liveATCLocations.json');
+const OUTPUT_FILE = path.join(__dirname, '..', '..', 'data', 'liveATCLocations.json');
 
 export async function fetchAndSaveATCMarkers(): Promise<void> {
 	try {

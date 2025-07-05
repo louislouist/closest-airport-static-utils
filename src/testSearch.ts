@@ -1,28 +1,30 @@
 // Example usage.
 
-import { loadAirports } from "./airportLoader";
+import { loadAirportsFromCsv } from "./airportLoader";
 import { findClosestAirports } from "./findClosestAirports";
 import { liveATCExistsByICAO } from "./liveATCLocation";
-import { searchAirportByCode } from "./searchAirportByCode";
-import { findClosestAirportsFromDb } from "./findClosestDb";
-import { searchAirportByCodeDb } from "./searchAirportByCodeDb";
-import { searchAirportsByQueryDb } from "./searchAirportsByQuery";
+import { searchAirportByCode } from "./searchAirportsByCode";
+import { searchAirportsByQuery } from "./searchAirportsByQuery";
 
 function main() {
-	const airports = loadAirports();
+	const airports = loadAirportsFromCsv();
 
 	const lat = 36.12;
 	const lon = -115.17; // Near Las Vegas
 
-	const closest = findClosestAirports(lat, lon, airports, 3, ['large_airport', 'medium_airport']);
+	const closest = findClosestAirports(lat, lon, 3, ['large_airport', 'medium_airport']);
 	console.log(closest);
 
-	const lax = searchAirportByCode('LAX', airports);
+	const lax = searchAirportByCode('LAX');
 	console.log('Search for LAX:', lax);
+
+	const loadTestName = airports[2].name;
+	console.log('loadAirports() name:', loadTestName);
+	console.log('\n\n');
 }
 
 function example() {
-	const closest = findClosestAirports(36.12, -115.17, loadAirports(), 3);
+	const closest = findClosestAirports(36.12, -115.17, 3);
 
 	closest.forEach(airport => {
 		console.log(`${airport.name} (${airport.iata || airport.icao})`);
@@ -34,21 +36,29 @@ function example() {
 			console.log(`  ${f.type} (${f.description}): ${f.mhz} MHz`);
 		});
 	});
+
+	console.log('\n\n');
 }
 
-function inLiveAtc() {
+function inLiveAtcData() {
 	const jfk = "KJFK";
 	const lower = "kjfk";
 	const rand = "JSJD";
+	const las = "JFK";
+	const lowLas = "jfk";
 
-	console.log(`Does ICAO "${jfk}" exist?`, liveATCExistsByICAO(jfk));
-	console.log(`Does ICAO "${lower}" exist?`, liveATCExistsByICAO(lower));
-	console.log(`Does ICAO "${rand}" exist?`, liveATCExistsByICAO(rand));
+	console.log(`Does ICAO "${jfk}" exist on LiveATC?`, liveATCExistsByICAO(jfk));
+	console.log(`Does ICAO "${lower}" exist on LiveATC?`, liveATCExistsByICAO(lower));
+	console.log(`Does ICAO "${rand}" exist on LiveATC?`, liveATCExistsByICAO(rand));
+	console.log(`Does IATA "${las}" exist? on LiveATC?`, liveATCExistsByICAO(las));
+	console.log(`Does IATA "${lowLas}" exist on LiveATC?`, liveATCExistsByICAO(lowLas));
+
+	console.log('\n\n');
 }
 
 
 function dbSearch() {
-	const closest = findClosestAirportsFromDb(36.12, -115.17, 3);
+	const closest = findClosestAirports(36.12, -115.17, 3);
 
 	console.log("dbSearch()");
 	console.log(`Found ${closest.length} airports`)
@@ -67,16 +77,15 @@ function dbSearch() {
 		console.log('\n')
 	});
 
-	const ap = searchAirportByCodeDb('LAX');
+	const ap = searchAirportByCode('LAX');
 	if (ap) {
 		console.log(ap);
 	}
-
-
+	console.log('\n\n');
 }
 
 function queryFromDb() {
-	const airports = searchAirportsByQueryDb("Las Vegas", 5);
+	const airports = searchAirportsByQuery("Las Vegas", 5);
 
 	console.log("queryFromDb()")
 
@@ -89,6 +98,7 @@ function queryFromDb() {
 			console.log(`    ${f.type}: ${f.mhz} MHz (${f.description})`);
 		});
 	});
+	console.log('\n\n');
 }
 
 
@@ -96,8 +106,10 @@ main();
 
 example();
 
-inLiveAtc();
+inLiveAtcData();
 
 dbSearch();
 
 queryFromDb();
+
+

@@ -7,7 +7,7 @@ import path from 'path';
 import axios from 'axios';
 
 // Setup paths
-const DATA_DIR = path.join(__dirname, '..', 'data');
+const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 // const CERT_PATH = path.join(__dirname, '..', 'certs', 'godaddy-g2.crt.pem');
 
 // Files to download

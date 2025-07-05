@@ -1,39 +1,3 @@
-export interface Airport {
-	id: string;
-	name: string;
-	city: string;
-	country: string;
-	iata: string;
-	icao: string;
-	lat: number;
-	lon: number;
-	type: string;
-	distance?: number;
-	wikipedia?: string;
-	home_link?: string;
-	regionCode?: string;
-	regionName?: string;
-	regionInfo?: Region;
-	frequencies?: Frequency[];
-}
-
-export interface Frequency {
-	type: string;
-	description: string;
-	mhz: number;
-}
-
-export interface Region {
-	id: number;
-	code: string;
-	local_code: string;
-	name: string;
-	continent: string;
-	iso_country: string;
-	wikipedia_link?: string;
-	keywords?: string;
-}
-
 export function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
 	const R = 6371; // Earth radius in kilometers
 	const toRad = (deg: number) => deg * Math.PI / 180;

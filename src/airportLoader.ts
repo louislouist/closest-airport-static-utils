@@ -3,9 +3,9 @@ import fs from 'fs';
 import { parse } from 'csv-parse/sync';
 import { loadRegionMap } from './regionLoader';
 import { loadFrequencies } from './frequencyLoader';
-import type { Airport } from './haversineDistance';
+import type { Airport } from './types/airport';
 
-export function loadAirports(): Airport[] {
+export function loadAirportsFromCsv(): Airport[] {
 	const regionMap = loadRegionMap();
 	const frequencyMap = loadFrequencies();
 	const filePath = path.join(__dirname, '..', 'data', 'airports.csv');

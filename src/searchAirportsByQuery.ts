@@ -1,28 +1,7 @@
-import { Airport, Frequency, Region } from "./haversineDistance";
+import { Airport, Frequency, Region } from "./types/airport";
 import { getDb } from "./db/db";
 
 export function searchAirportsByQuery(
-	query: string,
-	airports: Airport[],
-	count = 5
-): Airport[] {
-	const q = query.toLowerCase();
-
-	const matches = airports.filter(a => {
-		return (
-			a.name?.toLowerCase().includes(q) ||
-			a.city?.toLowerCase().includes(q) ||
-			a.iata?.toLowerCase() === q ||
-			a.icao?.toLowerCase() === q
-		);
-	});
-
-	return matches.slice(0, count);
-}
-
-
-
-export function searchAirportsByQueryDb(
 	query: string,
 	count = 5,
 	allowedTypes: string[] = ['large_airport', 'medium_airport', 'small_airport']
@@ -139,4 +118,3 @@ interface FrequencyRow {
 	description: string;
 	mhz: number;
 }
-
