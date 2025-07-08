@@ -1,7 +1,6 @@
 import { Airport, Frequency, Region } from "./types/airport";
 import { getDb } from "./db/db";
 
-
 export function findClosestAirports(
 	lat: number,
 	lon: number,
@@ -10,7 +9,10 @@ export function findClosestAirports(
 ): Airport[] {
 	const db = getDb();
 
-	const placeholders = allowedTypes.map(() => '?').join(',');
+	// Handle the case where allowedTypes is empty
+	const placeholders = allowedTypes.length > 0
+		? allowedTypes.map(() => '?').join(',')
+		: '1';  // Always true condition (this means no filtering on the type)
 
 	// Step 1: Closest airports with regionCode
 	const airportQuery = `
