@@ -101,6 +101,26 @@ function queryFromDb() {
 	console.log('\n\n');
 }
 
+function closeAPEmptyArray() {
+	// test for all airport types
+
+	// alcovam wy
+	const lat = 42.335;
+	const lon = -106.4235;
+
+	const closeAirport = findClosestAirports(
+		lat,
+		lon,
+		1,
+		['balloonport', 'closed', 'heliport', 'large_airport', 'medium_airport', 'seaplane_base', 'small_airport']
+	);
+	const closerAirport = findClosestAirports(lat, lon, 1, []);
+
+
+	console.log(closeAirport[0].name);
+	console.log(closerAirport[0].name);
+}
+
 
 main();
 
@@ -112,4 +132,4 @@ dbSearch();
 
 queryFromDb();
 
-
+closeAPEmptyArray();

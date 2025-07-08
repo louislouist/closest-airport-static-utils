@@ -10,12 +10,7 @@ export function findClosestAirports(
 	const db = getDb();
 
 	// Handle the case where allowedTypes is empty
-	const placeholders = allowedTypes.length > 0
-		? allowedTypes.map(() => '?').join(',')
-		: '1';  // Always true condition (this means no filtering on the type)
-
-	// Step 1: Closest airports with regionCode
-	const airportQuery = `
+	let airportQuery = `
 		SELECT
 			a.id,
 			a.name,
@@ -31,7 +26,15 @@ export function findClosestAirports(
 			a.iso_region AS regionCode,
 			haversine(a.latitude_deg, a.longitude_deg, ?, ?) AS distance
 		FROM airports a
-		WHERE a.type IN (${placeholders})
+	`;
+
+	// If allowedTypes is not empty, add the WHERE clause
+	if (allowedTypes.length > 0) {
+		const placeholders = allowedTypes.map(() => '?').join(',');
+		airportQuery += `WHERE a.type IN (${placeholders}) `;
+	}
+
+	airportQuery += `
 		ORDER BY distance ASC
 		LIMIT ?
 	`;
@@ -96,6 +99,7 @@ export function findClosestAirports(
 		frequencies: freqMap.get(row.icao ?? '') ?? [],
 	}));
 }
+
 
 // NOTE: Current Airport Types
 // ['balloonport', 'closed', 'heliport', 'large_airport', 'medium_airport', 'seaplane_base', 'small_airport']
