@@ -112,7 +112,9 @@ async function setBrowser(): Promise<Browser> {
                         console.log('Running on macOS');
                         return await puppeteer.launch({ headless: true });
                 case 'linux':
-                        console.log('Running on Linux using /usr/bin/chromium');
+                        console.log(
+                                'Downloading on Linux using /usr/bin/chromium'
+                        );
                         return await puppeteer.launch({
                                 executablePath: '/usr/bin/chromium',
                                 headless: true,
