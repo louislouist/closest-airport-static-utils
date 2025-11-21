@@ -15,51 +15,63 @@ const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 // https://davidmegginson.github.io/ourairports-data/
 //
 const files = [
-	{ name: 'airports.csv', url: 'https://davidmegginson.github.io/ourairports-data/airports.csv' },
-	{ name: 'regions.csv', url: 'https://davidmegginson.github.io/ourairports-data/regions.csv' },
-	{ name: 'airport-frequencies.csv', url: 'https://davidmegginson.github.io/ourairports-data/airport-frequencies.csv' },
+        {
+                name: 'airports.csv',
+                url: 'https://davidmegginson.github.io/ourairports-data/airports.csv',
+        },
+        {
+                name: 'regions.csv',
+                url: 'https://davidmegginson.github.io/ourairports-data/regions.csv',
+        },
+        {
+                name: 'airport-frequencies.csv',
+                url: 'https://davidmegginson.github.io/ourairports-data/airport-frequencies.csv',
+        },
 ];
 
 async function downloadFile(url: string, outputPath: string): Promise<void> {
-	const response = await axios.get(url, { responseType: 'stream' });
+        const response = await axios.get(url, { responseType: 'stream' });
 
-	const writer = fs.createWriteStream(outputPath);
-	response.data.pipe(writer);
+        const writer = fs.createWriteStream(outputPath);
+        response.data.pipe(writer);
 
-	return new Promise((resolve, reject) => {
-		writer.on('finish', resolve);
-		writer.on('error', reject);
-	});
+        return new Promise((resolve, reject) => {
+                writer.on('finish', resolve);
+                writer.on('error', reject);
+        });
 }
 
 export async function downloadAirportData() {
-	// Ensure data directory exists
-	if (!fs.existsSync(DATA_DIR)) {
-		fs.mkdirSync(DATA_DIR, { recursive: true });
-	}
+        // Ensure data directory exists
+        if (!fs.existsSync(DATA_DIR)) {
+                fs.mkdirSync(DATA_DIR, { recursive: true });
+        }
 
-	console.log('📥 Downloading data from OurAirports.com...');
+        console.log('📥 Downloading data from OurAirports.com...');
 
-	const errors: string[] = [];
+        const errors: string[] = [];
 
-	for (const file of files) {
-		const outputPath = path.join(DATA_DIR, file.name);
-		try {
-			await downloadFile(file.url, outputPath);
-			console.log(`✅ ${file.name} downloaded.`);
-		} catch (err) {
-			const message = err instanceof Error ? err.message : String(err);
-			const errorMsg = (`❌ ${file.name}: Failed to download ${file.url}: ${message}`);
-			console.error(errorMsg);
-			errors.push(errorMsg);
+        for (const file of files) {
+                const outputPath = path.join(DATA_DIR, file.name);
+                try {
+                        await downloadFile(file.url, outputPath);
+                        console.log(`✅ ${file.name} downloaded.`);
+                } catch (err) {
+                        const message =
+                                err instanceof Error
+                                        ? err.message
+                                        : String(err);
+                        const errorMsg = `❌ ${file.name}: Failed to download ${file.url}: ${message}`;
+                        console.error(errorMsg);
+                        errors.push(errorMsg);
+                }
 
-		}
+                if (errors.length > 0) {
+                        throw new Error(
+                                `ERROR: Unable to contine!!! One or more downloads failed:\n${errors.join('\n')}\nCurrent airport database may be be empty.`
+                        );
+                }
+        }
 
-		if (errors.length > 0) {
-			throw new Error(`ERROR: Unable to contine!!! One or more downloads failed:\n${errors.join('\n')}\nCurrent airport database may be be empty.`);
-		}
-
-	}
-
-	console.log('All ourairports.com files downloaded.');
+        console.log('✅✅✅ All ourairports.com files downloaded.');
 }

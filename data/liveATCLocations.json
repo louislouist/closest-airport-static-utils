@@ -18,6 +18,12 @@
     "lng": "-74.391563"
   },
   {
+    "name": "0B5",
+    "url": "https://www.liveatc.net/search/\\?icao=0b5",
+    "lat": "42.591610",
+    "lng": "-72.523003"
+  },
+  {
     "name": "0O4",
     "url": "https://www.liveatc.net/search/\\?icao=0o4",
     "lat": "39.946110",
@@ -96,6 +102,12 @@
     "lng": "-97.113220"
   },
   {
+    "name": "1T8",
+    "url": "https://www.liveatc.net/search/\\?icao=1t8",
+    "lat": "29.739365",
+    "lng": "-98.451294"
+  },
+  {
     "name": "26MA",
     "url": "https://www.liveatc.net/search/\\?icao=26ma",
     "lat": "42.696194",
@@ -159,7 +171,7 @@
     "name": "2W3",
     "url": "https://www.liveatc.net/search/\\?icao=2w3",
     "lat": "46.871666",
-    "lng": "122.257225"
+    "lng": "-122.257225"
   },
   {
     "name": "38W",
@@ -226,12 +238,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=46u",
     "lat": "43.181805",
     "lng": "-111.038498"
-  },
-  {
-    "name": "47N",
-    "url": "https://www.liveatc.net/search/\\?icao=47n",
-    "lat": "40.524445",
-    "lng": "-74.598305"
   },
   {
     "name": "4NY8",
@@ -326,8 +332,8 @@
   {
     "name": "6B6",
     "url": "https://www.liveatc.net/search/\\?icao=6b6",
-    "lat": "42.461163",
-    "lng": "-71.518677"
+    "lat": "42.460384",
+    "lng": "-71.518013"
   },
   {
     "name": "76G",
@@ -420,10 +426,22 @@
     "lng": "-96.698891"
   },
   {
+    "name": "CNF4",
+    "url": "https://www.liveatc.net/search/\\?icao=cnf4",
+    "lat": "44.364723",
+    "lng": "-78.783890"
+  },
+  {
     "name": "CNP3",
     "url": "https://www.liveatc.net/search/\\?icao=cnp3",
     "lat": "45.413891",
     "lng": "-76.365829"
+  },
+  {
+    "name": "CRF5",
+    "url": "https://www.liveatc.net/search/\\?icao=crf5",
+    "lat": "52.280277",
+    "lng": "-106.683891"
   },
   {
     "name": "CSB3",
@@ -472,12 +490,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=cybw",
     "lat": "51.103058",
     "lng": "-114.374443"
-  },
-  {
-    "name": "CYCG",
-    "url": "https://www.liveatc.net/search/\\?icao=cycg",
-    "lat": "49.296112",
-    "lng": "-117.632500"
   },
   {
     "name": "CYEG",
@@ -586,12 +598,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=cyqi",
     "lat": "43.826942",
     "lng": "-66.088058"
-  },
-  {
-    "name": "CYQM",
-    "url": "https://www.liveatc.net/search/\\?icao=cyqm",
-    "lat": "46.112221",
-    "lng": "-64.678612"
   },
   {
     "name": "CYQT",
@@ -748,6 +754,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=cyzx",
     "lat": "44.984444",
     "lng": "-64.916946"
+  },
+  {
+    "name": "CZBA",
+    "url": "https://www.liveatc.net/search/\\?icao=czba",
+    "lat": "43.442501",
+    "lng": "-79.850830"
   },
   {
     "name": "CZBB",
@@ -976,6 +988,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=enzv",
     "lat": "58.876778",
     "lng": "5.637856"
+  },
+  {
+    "name": "EPBY",
+    "url": "https://www.liveatc.net/search/\\?icao=epby",
+    "lat": "53.096668",
+    "lng": "17.977777"
   },
   {
     "name": "EPKK",
@@ -1260,6 +1278,12 @@
     "lng": "-81.467682"
   },
   {
+    "name": "KALB",
+    "url": "https://www.liveatc.net/search/\\?icao=kalb",
+    "lat": "42.749111",
+    "lng": "-73.801971"
+  },
+  {
     "name": "KAMA",
     "url": "https://www.liveatc.net/search/\\?icao=kama",
     "lat": "35.219360",
@@ -1392,6 +1416,12 @@
     "lng": "-75.723389"
   },
   {
+    "name": "KAVQ",
+    "url": "https://www.liveatc.net/search/\\?icao=kavq",
+    "lat": "32.409557",
+    "lng": "-111.218391"
+  },
+  {
     "name": "KAWO",
     "url": "https://www.liveatc.net/search/\\?icao=kawo",
     "lat": "48.160751",
@@ -1512,12 +1542,6 @@
     "lng": "-86.752304"
   },
   {
-    "name": "KBID",
-    "url": "https://www.liveatc.net/search/\\?icao=kbid",
-    "lat": "41.168110",
-    "lng": "-71.577835"
-  },
-  {
     "name": "KBIL",
     "url": "https://www.liveatc.net/search/\\?icao=kbil",
     "lat": "45.807667",
@@ -1620,6 +1644,12 @@
     "lng": "-97.426003"
   },
   {
+    "name": "KBTR",
+    "url": "https://www.liveatc.net/search/\\?icao=kbtr",
+    "lat": "30.532906",
+    "lng": "-91.149879"
+  },
+  {
     "name": "KBTV",
     "url": "https://www.liveatc.net/search/\\?icao=kbtv",
     "lat": "44.471863",
@@ -1710,12 +1740,6 @@
     "lng": "-122.056892"
   },
   {
-    "name": "KCDC",
-    "url": "https://www.liveatc.net/search/\\?icao=kcdc",
-    "lat": "37.700974",
-    "lng": "-113.098862"
-  },
-  {
     "name": "KCDW",
     "url": "https://www.liveatc.net/search/\\?icao=kcdw",
     "lat": "40.875221",
@@ -1758,10 +1782,10 @@
     "lng": "-86.921082"
   },
   {
-    "name": "KCFO",
-    "url": "https://www.liveatc.net/search/\\?icao=kcfo",
-    "lat": "39.784199",
-    "lng": "-104.537621"
+    "name": "KCGI",
+    "url": "https://www.liveatc.net/search/\\?icao=kcgi",
+    "lat": "37.225315",
+    "lng": "-89.570763"
   },
   {
     "name": "KCGZ",
@@ -1833,7 +1857,7 @@
     "name": "KCLS",
     "url": "https://www.liveatc.net/search/\\?icao=kcls",
     "lat": "46.677029",
-    "lng": "122.982750"
+    "lng": "-122.982750"
   },
   {
     "name": "KCLT",
@@ -2268,6 +2292,12 @@
     "lng": "-123.211975"
   },
   {
+    "name": "KEUL",
+    "url": "https://www.liveatc.net/search/\\?icao=keul",
+    "lat": "43.581333",
+    "lng": "-116.523056"
+  },
+  {
     "name": "KEVB",
     "url": "https://www.liveatc.net/search/\\?icao=kevb",
     "lat": "29.055695",
@@ -2356,6 +2386,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=kfka",
     "lat": "43.676750",
     "lng": "-92.179749"
+  },
+  {
+    "name": "KFLD",
+    "url": "https://www.liveatc.net/search/\\?icao=kfld",
+    "lat": "43.771168",
+    "lng": "-88.488419"
   },
   {
     "name": "KFLG",
@@ -2712,6 +2748,12 @@
     "lng": "-115.134445"
   },
   {
+    "name": "KHOB",
+    "url": "https://www.liveatc.net/search/\\?icao=khob",
+    "lat": "32.687347",
+    "lng": "-103.217529"
+  },
+  {
     "name": "KHOU",
     "url": "https://www.liveatc.net/search/\\?icao=khou",
     "lat": "29.645418",
@@ -2740,12 +2782,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=khsv",
     "lat": "34.637196",
     "lng": "-86.775055"
-  },
-  {
-    "name": "KHUF",
-    "url": "https://www.liveatc.net/search/\\?icao=khuf",
-    "lat": "39.451473",
-    "lng": "-87.307587"
   },
   {
     "name": "KHUL",
@@ -2934,6 +2970,12 @@
     "lng": "-90.075890"
   },
   {
+    "name": "KJAQ",
+    "url": "https://www.liveatc.net/search/\\?icao=kjaq",
+    "lat": "38.376801",
+    "lng": "-120.793907"
+  },
+  {
     "name": "KJAX",
     "url": "https://www.liveatc.net/search/\\?icao=kjax",
     "lat": "30.494057",
@@ -2950,6 +2992,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=kjfk",
     "lat": "40.639751",
     "lng": "-73.778923"
+  },
+  {
+    "name": "KJKA",
+    "url": "https://www.liveatc.net/search/\\?icao=kjka",
+    "lat": "30.289639",
+    "lng": "-87.671776"
   },
   {
     "name": "KJLN",
@@ -3264,6 +3312,12 @@
     "lng": "-102.201920"
   },
   {
+    "name": "KMAN",
+    "url": "https://www.liveatc.net/search/\\?icao=kman",
+    "lat": "43.581333",
+    "lng": "-116.523056"
+  },
+  {
     "name": "KMCC",
     "url": "https://www.liveatc.net/search/\\?icao=kmcc",
     "lat": "38.667641",
@@ -3466,6 +3520,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=kmnz",
     "lat": "31.665920",
     "lng": "-98.148643"
+  },
+  {
+    "name": "KMOR",
+    "url": "https://www.liveatc.net/search/\\?icao=kmor",
+    "lat": "36.179390",
+    "lng": "-83.375443"
   },
   {
     "name": "KMQY",
@@ -3864,6 +3924,12 @@
     "lng": "-80.232697"
   },
   {
+    "name": "KPJC",
+    "url": "https://www.liveatc.net/search/\\?icao=kpjc",
+    "lat": "40.801971",
+    "lng": "-80.160858"
+  },
+  {
     "name": "KPKB",
     "url": "https://www.liveatc.net/search/\\?icao=kpkb",
     "lat": "39.344971",
@@ -3968,14 +4034,20 @@
   {
     "name": "KPTW",
     "url": "https://www.liveatc.net/search/\\?icao=kptw",
-    "lat": "40.239555",
-    "lng": "-75.556725"
+    "lat": "39.978973",
+    "lng": "-75.865471"
   },
   {
     "name": "KPUB",
     "url": "https://www.liveatc.net/search/\\?icao=kpub",
     "lat": "38.289944",
     "lng": "-104.498032"
+  },
+  {
+    "name": "KPUJ",
+    "url": "https://www.liveatc.net/search/\\?icao=kpuj",
+    "lat": "33.912045",
+    "lng": "-84.940620"
   },
   {
     "name": "KPVB",
@@ -4236,6 +4308,12 @@
     "lng": "-120.642593"
   },
   {
+    "name": "KSCH",
+    "url": "https://www.liveatc.net/search/\\?icao=ksch",
+    "lat": "42.852455",
+    "lng": "-73.928864"
+  },
+  {
     "name": "KSCK",
     "url": "https://www.liveatc.net/search/\\?icao=ksck",
     "lat": "37.894169",
@@ -4350,6 +4428,12 @@
     "lng": "-123.002502"
   },
   {
+    "name": "KSLI",
+    "url": "https://www.liveatc.net/search/\\?icao=ksli",
+    "lat": "33.790031",
+    "lng": "-118.051422"
+  },
+  {
     "name": "KSLN",
     "url": "https://www.liveatc.net/search/\\?icao=ksln",
     "lat": "38.790966",
@@ -4390,6 +4474,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=kspk",
     "lat": "40.145027",
     "lng": "-111.667694"
+  },
+  {
+    "name": "KSPS",
+    "url": "https://www.liveatc.net/search/\\?icao=ksps",
+    "lat": "33.988800",
+    "lng": "-98.491905"
   },
   {
     "name": "KSQL",
@@ -4464,10 +4554,10 @@
     "lng": "-96.384369"
   },
   {
-    "name": "KSWF",
-    "url": "https://www.liveatc.net/search/\\?icao=kswf",
-    "lat": "41.504112",
-    "lng": "-74.104836"
+    "name": "KSVR",
+    "url": "https://www.liveatc.net/search/\\?icao=ksvr",
+    "lat": "40.619556",
+    "lng": "-111.992889"
   },
   {
     "name": "KSWO",
@@ -4728,6 +4818,12 @@
     "lng": "-118.489975"
   },
   {
+    "name": "KVOK",
+    "url": "https://www.liveatc.net/search/\\?icao=kvok",
+    "lat": "43.939240",
+    "lng": "-90.253159"
+  },
+  {
     "name": "KVPZ",
     "url": "https://www.liveatc.net/search/\\?icao=kvpz",
     "lat": "41.453972",
@@ -4744,12 +4840,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=kvuo",
     "lat": "45.620453",
     "lng": "-122.656487"
-  },
-  {
-    "name": "KW10",
-    "url": "https://www.liveatc.net/search/\\?icao=kw10",
-    "lat": "48.017513",
-    "lng": "-122.437729"
   },
   {
     "name": "KWDR",
@@ -4878,12 +4968,6 @@
     "lng": "15.104544"
   },
   {
-    "name": "LJPZ",
-    "url": "https://www.liveatc.net/search/\\?icao=ljpz",
-    "lat": "45.473354",
-    "lng": "13.614978"
-  },
-  {
     "name": "LKPM",
     "url": "https://www.liveatc.net/search/\\?icao=lkpm",
     "lat": "49.720078",
@@ -4974,6 +5058,12 @@
     "lng": "6.108950"
   },
   {
+    "name": "LSGL",
+    "url": "https://www.liveatc.net/search/\\?icao=lsgl",
+    "lat": "46.545277",
+    "lng": "6.616667"
+  },
+  {
     "name": "LSGS",
     "url": "https://www.liveatc.net/search/\\?icao=lsgs",
     "lat": "46.219593",
@@ -5040,18 +5130,6 @@
     "lng": "9.560775"
   },
   {
-    "name": "LTBA",
-    "url": "https://www.liveatc.net/search/\\?icao=ltba",
-    "lat": "40.976921",
-    "lng": "28.814606"
-  },
-  {
-    "name": "LTFJ",
-    "url": "https://www.liveatc.net/search/\\?icao=ltfj",
-    "lat": "40.898552",
-    "lng": "29.309219"
-  },
-  {
     "name": "LUKK",
     "url": "https://www.liveatc.net/search/\\?icao=lukk",
     "lat": "46.927746",
@@ -5116,6 +5194,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=m54",
     "lat": "36.190411",
     "lng": "-86.315689"
+  },
+  {
+    "name": "MGQZ",
+    "url": "https://www.liveatc.net/search/\\?icao=mgqz",
+    "lat": "14.865600",
+    "lng": "-91.501999"
   },
   {
     "name": "MHLC",
@@ -5202,6 +5286,12 @@
     "lng": "-99.015282"
   },
   {
+    "name": "MMSP",
+    "url": "https://www.liveatc.net/search/\\?icao=mmsp",
+    "lat": "22.254303",
+    "lng": "-100.930809"
+  },
+  {
     "name": "MMTC",
     "url": "https://www.liveatc.net/search/\\?icao=mmtc",
     "lat": "25.568277",
@@ -5212,6 +5302,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=mmtj",
     "lat": "32.541065",
     "lng": "-116.970161"
+  },
+  {
+    "name": "MMTO",
+    "url": "https://www.liveatc.net/search/\\?icao=mmto",
+    "lat": "19.336945",
+    "lng": "-99.565834"
   },
   {
     "name": "MPMG",
@@ -5268,12 +5364,6 @@
     "lng": "-75.093613"
   },
   {
-    "name": "N05",
-    "url": "https://www.liveatc.net/search/\\?icao=n05",
-    "lat": "40.820099",
-    "lng": "-74.855164"
-  },
-  {
     "name": "N12",
     "url": "https://www.liveatc.net/search/\\?icao=n12",
     "lat": "40.066803",
@@ -5328,12 +5418,6 @@
     "lng": "-120.987526"
   },
   {
-    "name": "OBBI",
-    "url": "https://www.liveatc.net/search/\\?icao=obbi",
-    "lat": "26.270834",
-    "lng": "50.633610"
-  },
-  {
     "name": "OKKK",
     "url": "https://www.liveatc.net/search/\\?icao=okkk",
     "lat": "29.226566",
@@ -5370,10 +5454,10 @@
     "lng": "-149.806519"
   },
   {
-    "name": "PAFA",
-    "url": "https://www.liveatc.net/search/\\?icao=pafa",
-    "lat": "64.815117",
-    "lng": "-147.856262"
+    "name": "PAEN",
+    "url": "https://www.liveatc.net/search/\\?icao=paen",
+    "lat": "60.573277",
+    "lng": "-151.244827"
   },
   {
     "name": "PALH",
@@ -5488,6 +5572,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=rpll",
     "lat": "14.508647",
     "lng": "121.019585"
+  },
+  {
+    "name": "S36",
+    "url": "https://www.liveatc.net/search/\\?icao=s36",
+    "lat": "47.337097",
+    "lng": "-122.103539"
   },
   {
     "name": "S50",
@@ -5676,12 +5766,6 @@
     "lng": "-35.366390"
   },
   {
-    "name": "SBSL",
-    "url": "https://www.liveatc.net/search/\\?icao=sbsl",
-    "lat": "-2.585361",
-    "lng": "-44.234138"
-  },
-  {
     "name": "SBSN",
     "url": "https://www.liveatc.net/search/\\?icao=sbsn",
     "lat": "-2.422431",
@@ -5710,6 +5794,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=sbvt",
     "lat": "-20.258057",
     "lng": "-40.286388"
+  },
+  {
+    "name": "SCEL",
+    "url": "https://www.liveatc.net/search/\\?icao=scel",
+    "lat": "-33.392975",
+    "lng": "-70.785805"
   },
   {
     "name": "SEGU",
@@ -5760,12 +5850,6 @@
     "lng": "-56.264702"
   },
   {
-    "name": "SUCM",
-    "url": "https://www.liveatc.net/search/\\?icao=sucm",
-    "lat": "-33.966110",
-    "lng": "-58.325279"
-  },
-  {
     "name": "SUDU",
     "url": "https://www.liveatc.net/search/\\?icao=sudu",
     "lat": "-33.359722",
@@ -5800,12 +5884,6 @@
     "url": "https://www.liveatc.net/search/\\?icao=supu",
     "lat": "-32.363300",
     "lng": "-58.061901"
-  },
-  {
-    "name": "SURV",
-    "url": "https://www.liveatc.net/search/\\?icao=surv",
-    "lat": "-30.975000",
-    "lng": "-55.476391"
   },
   {
     "name": "SUSO",
@@ -5928,12 +6006,6 @@
     "lng": "-64.678703"
   },
   {
-    "name": "U42",
-    "url": "https://www.liveatc.net/search/\\?icao=u42",
-    "lat": "40.619556",
-    "lng": "-111.992889"
-  },
-  {
     "name": "UHHH",
     "url": "https://www.liveatc.net/search/\\?icao=uhhh",
     "lat": "48.528046",
@@ -5970,6 +6042,12 @@
     "lng": "113.914604"
   },
   {
+    "name": "W10",
+    "url": "https://www.liveatc.net/search/\\?icao=w10",
+    "lat": "48.017513",
+    "lng": "-122.437729"
+  },
+  {
     "name": "WBKK",
     "url": "https://www.liveatc.net/search/\\?icao=wbkk",
     "lat": "5.937208",
@@ -5980,6 +6058,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=wmkb",
     "lat": "5.465917",
     "lng": "100.391167"
+  },
+  {
+    "name": "WN53",
+    "url": "https://www.liveatc.net/search/\\?icao=wn53",
+    "lat": "48.110424",
+    "lng": "-122.062836"
   },
   {
     "name": "WSSS",
@@ -6060,6 +6144,12 @@
     "lng": "146.765274"
   },
   {
+    "name": "YCAB",
+    "url": "https://www.liveatc.net/search/\\?icao=ycab",
+    "lat": "-27.076668",
+    "lng": "152.986664"
+  },
+  {
     "name": "YGAW",
     "url": "https://www.liveatc.net/search/\\?icao=ygaw",
     "lat": "-34.599998",
@@ -6126,6 +6216,18 @@
     "lng": "115.966942"
   },
   {
+    "name": "YRED",
+    "url": "https://www.liveatc.net/search/\\?icao=yred",
+    "lat": "-27.206667",
+    "lng": "153.068329"
+  },
+  {
+    "name": "YRYW",
+    "url": "https://www.liveatc.net/search/\\?icao=yryw",
+    "lat": "-36.538643",
+    "lng": "144.241211"
+  },
+  {
     "name": "YSBK",
     "url": "https://www.liveatc.net/search/\\?icao=ysbk",
     "lat": "-33.924442",
@@ -6142,6 +6244,18 @@
     "url": "https://www.liveatc.net/search/\\?icao=yscn",
     "lat": "-34.040279",
     "lng": "150.687225"
+  },
+  {
+    "name": "YSPT",
+    "url": "https://www.liveatc.net/search/\\?icao=yspt",
+    "lat": "-27.915001",
+    "lng": "153.373001"
+  },
+  {
+    "name": "YSRI",
+    "url": "https://www.liveatc.net/search/\\?icao=ysri",
+    "lat": "-33.600555",
+    "lng": "150.780838"
   },
   {
     "name": "YSSY",

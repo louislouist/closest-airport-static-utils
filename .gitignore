@@ -40,5 +40,8 @@ init.lua
 # Backup files
 *~
 
+# Prettier
+.prettierrc
+
 # Lua LSP / Treesitter artifacts (optional, if stored locally)
 parser/
