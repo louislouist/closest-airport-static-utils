@@ -44,17 +44,17 @@ export async function fetchATCMarkersPuppeteer() {
 
                 const atcMarkers = parseMarkers(jsReponse);
                 if (!atcMarkers || !Array.isArray(atcMarkers)) {
-                        console.log(
+                        throw new Error(
                                 'ERROR: No LiveATC location markers available!'
                         );
-                        await browser.close();
-                        return;
                 }
                 // write LiveATC markers to disk.
                 writeMarkers(atcMarkers);
         } catch (err) {
                 // puppeteer errors
-                console.log('ERROR: puppeteer unable to load LiveATC', err);
+                throw new Error(
+                        `ERROR: puppeteer unable to load LiveATC: ${err}`
+                );
         }
 
         await browser.close();
