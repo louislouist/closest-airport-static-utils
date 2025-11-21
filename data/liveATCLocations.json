@@ -332,8 +332,8 @@
   {
     "name": "6B6",
     "url": "https://www.liveatc.net/search/\\?icao=6b6",
-    "lat": "42.460384",
-    "lng": "-71.518013"
+    "lat": "42.461163",
+    "lng": "-71.518677"
   },
   {
     "name": "76G",
@@ -992,8 +992,8 @@
   {
     "name": "EPBY",
     "url": "https://www.liveatc.net/search/\\?icao=epby",
-    "lat": "53.096668",
-    "lng": "17.977777"
+    "lat": "53.096802",
+    "lng": "17.977669"
   },
   {
     "name": "EPKK",
@@ -1496,8 +1496,8 @@
   {
     "name": "KBEC",
     "url": "https://www.liveatc.net/search/\\?icao=kbec",
-    "lat": "37.693916",
-    "lng": "-97.214920"
+    "lat": "37.694473",
+    "lng": "-97.214989"
   },
   {
     "name": "KBED",
@@ -2754,12 +2754,6 @@
     "lng": "-103.217529"
   },
   {
-    "name": "KHOU",
-    "url": "https://www.liveatc.net/search/\\?icao=khou",
-    "lat": "29.645418",
-    "lng": "-95.278893"
-  },
-  {
     "name": "KHPN",
     "url": "https://www.liveatc.net/search/\\?icao=khpn",
     "lat": "41.066944",
@@ -2872,6 +2866,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=kiah",
     "lat": "29.984444",
     "lng": "-95.341446"
+  },
+  {
+    "name": "KICT",
+    "url": "https://www.liveatc.net/search/\\?icao=kict",
+    "lat": "37.649944",
+    "lng": "-97.433060"
   },
   {
     "name": "KIKV",
@@ -3212,8 +3212,8 @@
   {
     "name": "KLOT",
     "url": "https://www.liveatc.net/search/\\?icao=klot",
-    "lat": "41.608112",
-    "lng": "-88.096191"
+    "lat": "41.608097",
+    "lng": "-88.096390"
   },
   {
     "name": "KLOU",
@@ -4034,8 +4034,8 @@
   {
     "name": "KPTW",
     "url": "https://www.liveatc.net/search/\\?icao=kptw",
-    "lat": "39.978973",
-    "lng": "-75.865471"
+    "lat": "40.239555",
+    "lng": "-75.556725"
   },
   {
     "name": "KPUB",
@@ -4162,6 +4162,12 @@
     "url": "https://www.liveatc.net/search/\\?icao=krhv",
     "lat": "37.332863",
     "lng": "-121.819809"
+  },
+  {
+    "name": "KRIC",
+    "url": "https://www.liveatc.net/search/\\?icao=kric",
+    "lat": "37.505165",
+    "lng": "-77.319664"
   },
   {
     "name": "KRIL",

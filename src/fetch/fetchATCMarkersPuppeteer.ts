@@ -1,6 +1,7 @@
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser, Puppeteer } from 'puppeteer';
 import path = require('path');
+import os from 'os';
 
 interface LiveATCMarkers {
         name: string;
@@ -23,7 +24,8 @@ const OUTPUT_FILE = path.join(
 // and chromium for LiveATC supported airports.
 //
 export async function fetchATCMarkersPuppeteer() {
-        const browser = await puppeteer.launch({ headless: true });
+        const browser = await setBrowser();
+        // const browser = await puppeteer.launch({ headless: true });
 
         const page = await browser.newPage();
 
@@ -98,5 +100,27 @@ function writeMarkers(atcMarkers: LiveATCMarkers[]) {
                 console.log(`✅ Markers saved to ${OUTPUT_FILE}`);
         } catch (error) {
                 console.error('❌ Error fetching or saving markers:', error);
+        }
+}
+async function setBrowser(): Promise<Browser> {
+        switch (process.platform) {
+                case 'win32':
+                        console.log('Running on Windows');
+                        console.log('WARNING: Windows support is experimental');
+                        return await puppeteer.launch({ headless: true });
+                case 'darwin':
+                        console.log('Running on macOS');
+                        return await puppeteer.launch({ headless: true });
+                case 'linux':
+                        console.log('Running on Linux using /usr/bin/chromium');
+                        return await puppeteer.launch({
+                                executablePath: '/usr/bin/chromium',
+                                headless: true,
+                        });
+                default:
+                        console.log(
+                                'WARNING: Unknown OS... trying to lauch puppeteer'
+                        );
+                        return await puppeteer.launch({ headless: true });
         }
 }
